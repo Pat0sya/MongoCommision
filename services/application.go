@@ -55,7 +55,7 @@ func AddApplication(reader *bufio.Reader) {
 		return
 	}
 
-	fmt.Println("✅ Заявление добавлено.")
+	fmt.Println("Заявление добавлено.")
 }
 
 func ListApplications() {

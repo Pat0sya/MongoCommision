@@ -32,6 +32,7 @@ func ListApplicants() {
 			continue
 		}
 		fmt.Printf("- %s (%s)\n", a.Name, a.Email)
+		fmt.Printf("ID: %s", a.ID)
 	}
 }
 

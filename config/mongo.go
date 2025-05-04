@@ -16,7 +16,7 @@ func ConnectDB() {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	clientOptions := options.Client().ApplyURI("mongodb://127.0.0.1:27017")
+	clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
 	client, err := mongo.Connect(ctx, clientOptions)
 	if err != nil {
 		log.Fatal("Ошибка подключения к MongoDB:", err)
@@ -26,6 +26,6 @@ func ConnectDB() {
 		log.Fatal("MongoDB не отвечает:", err)
 	}
 
-	fmt.Println("✅ Подключение к MongoDB успешно")
+	fmt.Println("Подключение к MongoDB успешно")
 	Client = client
 }

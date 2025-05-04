@@ -50,7 +50,7 @@ func AddProgram(reader *bufio.Reader) {
 		return
 	}
 
-	fmt.Println("✅ Программа добавлена.")
+	fmt.Println("Программа добавлена.")
 }
 
 func ListPrograms() {
@@ -71,5 +71,6 @@ func ListPrograms() {
 			continue
 		}
 		fmt.Printf("- %s (ID факультета: %s, %d лет)\n", p.Name, p.FacultyID.Hex(), p.Duration)
+		fmt.Printf("ID: %s", p.ID)
 	}
 }

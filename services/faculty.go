@@ -33,7 +33,7 @@ func AddFaculty(reader *bufio.Reader) {
 		return
 	}
 
-	fmt.Println("✅ Факультет добавлен.")
+	fmt.Println("Факультет добавлен.")
 }
 
 func ListFaculties() {
@@ -54,5 +54,6 @@ func ListFaculties() {
 			continue
 		}
 		fmt.Printf("- %s (корпус: %s)\n", f.Name, f.Building)
+		fmt.Printf("ID: %s", f.ID)
 	}
 }
