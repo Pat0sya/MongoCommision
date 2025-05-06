@@ -15,16 +15,16 @@ import (
 )
 
 func AddApplication(reader *bufio.Reader) {
-	fmt.Print("Email абитуриента: ")
+	fmt.Print("ID абитуриента: ")
 	email, _ := reader.ReadString('\n')
 	email = strings.TrimSpace(email)
 
-	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 24*time.Second)
 	defer cancel()
 
 	// Найдём абитуриента
 	var applicant models.Applicant
-	err := utils.ApplicantCollection.FindOne(ctx, bson.M{"email": email}).Decode(&applicant)
+	err := utils.ApplicantCollection.FindOne(ctx, bson.M{"_id": applicant.ID}).Decode(&applicant)
 	if err != nil {
 		fmt.Println("Абитуриент не найден.")
 		return
